@@ -34,7 +34,7 @@ const Imc = () => {
   }
 
   return (
-    <Layout tituloPagina='Índice de masa corporal' tituloPestaña='Imc'>
+    <Layout tituloPaginas='Índice de masa corporal' tituloPestaña='Imc'>
     <Box sx={{ maxWidth: 300 }} mx="auto">
       <form onSubmit={form.onSubmit((values) => Calcular())}>
         <TextInput
