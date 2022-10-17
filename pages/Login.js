@@ -1,75 +1,59 @@
-import React from 'react'
-import {Button,TextInput, PasswordInput, Container, AppShell } from '@mantine/core'
-
+import React, { useState } from 'react'
+import { Button, TextInput, PasswordInput, Container, AppShell } from '@mantine/core'
+import Registro from './registro'
 import Link from 'next/link';
-import {useState} from 'react'
-import firebaseLogin from '../firebase/firebaseLogin';
-import { useRouter } from 'next/router';
-
+import Layout from '../components/Layout';
+import firebase from '../firebase/firebase';
+import store from '../utils/store'
+import { useRouter } from 'next/router'
 
 const Login = () => {
+  const router = useRouter();
+  const [email, setEmail] = useState('')
+  const [pass, setPass] = useState('')
 
-  const [input, setInput] = useState({
-    email: '',
-    pass: '',
-  });
-  const {push}= useRouter()
-  const onHandleChange= (e)=> {
-    setInput({
-      ...input,
-      [e.target.name]: e.target.value,
-    });
-   
-    
+  async function onLogin() {
+    await firebase.auth.loginUsuario(email, pass)
+      .then(response => {
+        store.setUsuario(response.user.accessToken);
+        router.push('/inicio');
+      })
+      .catch(e => {
+        alert(`Credenciales no validas`);
+      })
   }
-
-  async function loginUser() {
-    // validations
-
-    const response = await firebaseLogin.auth.loginUsuario(input.email, input.pass);
-    
-  }
-
 
   return (
-
-    <div >
-      
+    <Layout >Login
+      <AppShell>
         <Container size={300} px={0}>
           <h1>Iniciar sesion</h1>
 
-         
-          <TextInput label="Ingresa tu E-mail" placeholder="Correo electronico" 
-          onChange={ e => onHandleChange(e)}/>
-
-
-          
+          <TextInput label="Ingresa tu E-mail" placeholder="Correo electronico" value={email} onChange={(e) => setEmail(e.target.value)} />
 
           <PasswordInput
             placeholder="Ingresa tu contraseña"
             label="Contraseña"
             description="Password must include at least one letter, number and special character"
+            value={pass} onChange={(e) => setPass(e.target.value)}
             withAsterisk
-            onChange={ e => onHandleChange(e)}
           />
 
           <br></br>
-          <Button color="violet" variant="outline" >
+          <Button color="violet" variant="outline" onClick={onLogin} >
             Iniciar sesion
           </Button>
           <p></p>
           <Link href='/registro'>
-            <Button color="violet" variant="outline" onClick={loginUser}>
+            <Button color="violet" variant="outline">
               Registrarse
             </Button>
           </Link>
 
-
-
         </Container>
-   
+      </AppShell>
 
-    </div>
+    </Layout>
   )
 }
 

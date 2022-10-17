@@ -22,7 +22,7 @@ console.log(entradaFilter);
   }
   return (
 <Appsh tituloPagina='Buscador'>
-    <Layout tituloPestaña='Buscador'>
+    <Layout tituloPestaña='Buscador' isPrivate={true}>
       <Group>
         <TextInput
           label="¿Qué deseas buscar?"
