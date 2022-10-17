@@ -1,4 +1,4 @@
-import { Group, TextInput, Button, Card, AppShell } from '@mantine/core'
+import { Group, TextInput, Button, Card, AppShell,Stack,Table } from '@mantine/core'
 import React from 'react'
 import { useState } from 'react';
 import Appsh from '../components/Appsh';
@@ -23,6 +23,7 @@ console.log(entradaFilter);
   return (
 <Appsh tituloPagina='Buscador'>
     <Layout tituloPestaña='Buscador' isPrivate={true}>
+    <Stack sx={(theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], height: 300 })}>
       <Group>
         <TextInput
           label="¿Qué deseas buscar?"
@@ -32,18 +33,37 @@ console.log(entradaFilter);
           onChange={(event) => setSearch(event.currentTarget.value)}
         />
         <Button onClick={busqueda}> Buscador</Button>
+       
+   
 
-        <div>
-          {entradaFilter.map((entrada, index)=>{
+      </Group>
+      
+       
+        <Table>
+      <thead>
+        <tr>
+          <th>Alimento</th>
+          <th>Carbohidratos</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+      <td>  {entradaFilter.map((entrada, index)=>{
             return (
               <p key={index}>{entrada.Alimento }</p>
             )
-            
-
-          })}
-        </div>
-      </Group>
-
+          })
+        }</td>
+       <td>  {entradaFilter.map((entrada, index)=>{
+            return (
+              <p key={index}>{entrada.Carbohidratos }</p>
+            )
+          })}</td> 
+        </tbody>
+       
+    </Table>
+      
+      </Stack> 
     </Layout>
     </Appsh>
   )

@@ -13,8 +13,7 @@ const Appsh = ({ children, tituloPagina}) => {
   return (
     <AppShell
     padding="md"
-    navbar={
-    <Navbar width={{ base: 300 }} height={500} p="xs">
+    navbar={ <Navbar width={{ sm: 300, lg: 250, base: 100,}}>
       {
          <Stack sx={(theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], height: 300 })}>
            <Button variant="light" radius="lg" size="md" compact ><Link href='/imc'>Calcular IMC</Link></Button>
