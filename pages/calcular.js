@@ -18,37 +18,28 @@ const Calcular = () => {
   return (
     <Appsh tituloPagina="calcular">
     <Layout  tituloPestaña='Calcula' isPrivate={true}>
-
       <Card shadow="sm" p="lg" radius="md" withBorder>
         <Card.Section>
           <Image
             src="https://img.freepik.com/vector-premium/control-indice-masa-corporal-bastante-joven-dieta-tratando-controlar-peso-corporal-imc-chica-escala-metodo-medicion-grasas-saludables-escalas-graficas-obesidad-peso-obesidad-extrema_458444-1022.jpg?w=2000"
             height={400}
-
           />
         </Card.Section>
-
-
         <SimpleGrid cols={3}>
           <TextInput
             placeholder="Ingrese su peso"
             label="Peso (kg)"
             onChange={(event) => setPeso(event.currentTarget.value)}
             id='w'
-
             withAsterisk
-
           />
-
           <TextInput
             placeholder="Ingrese su altura"
             label="Altura (cm)"
             id='h'
             onChange={(event) => setAltura(event.currentTarget.value)}
             withAsterisk
-
           />
-
           <TextInput
             placeholder="Edad"
             label="Edad"
@@ -66,8 +57,6 @@ const Calcular = () => {
             data={['Masculino', 'Femenino']}
             value={genero}
             onChange={(event) => setGenero(event.currentTarget.value)}
-
-
           />
           <NativeSelect
             label="Seleccione el factor de actividad"
@@ -88,13 +77,10 @@ const Calcular = () => {
             onChange={(event) => setFormula(event.currentTarget.value)}
           />
         </SimpleGrid>
-
       </Card>
       <CalculosBmi formula={formula} setGeb={setGeb} genero={genero} peso={peso} altura={altura} edad={edad} fa={fa} setget={setget} />
-
       <Text> G.E.B: {gett} {formula}</Text>
       <Text> G.E.T/F.A: {geb} {formula}</Text>
-
     </Layout>
     </Appsh>
   )

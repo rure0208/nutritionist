@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, TextInput, PasswordInput, Container, AppShell } from '@mantine/core'
+import { Button, TextInput, PasswordInput, Container, AppShell ,Card,Group} from '@mantine/core'
 import Registro from './registro'
 import Link from 'next/link';
 import Layout from '../components/Layout';
@@ -24,9 +24,11 @@ const Login = () => {
   }
 
   return (
-    <Layout >Login
+    <Layout>
       <AppShell>
         <Container size={300} px={0}>
+        <Card shadow="sm" p="lg" radius="md" withBorder>
+       
           <h1>Iniciar sesion</h1>
 
           <TextInput label="Ingresa tu E-mail" placeholder="Correo electronico" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -38,7 +40,7 @@ const Login = () => {
             value={pass} onChange={(e) => setPass(e.target.value)}
             withAsterisk
           />
-
+ <Group position="center" mt="md" mb="xs">
           <br></br>
           <Button color="violet" variant="outline" onClick={onLogin} >
             Iniciar sesion
@@ -49,7 +51,8 @@ const Login = () => {
               Registrarse
             </Button>
           </Link>
-
+          </Group>
+          </Card>
         </Container>
       </AppShell>
 
