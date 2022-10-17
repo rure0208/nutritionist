@@ -21,8 +21,8 @@ const Layout = ({children,tituloPagina, tituloPestaña}) => {
       <Navbar width={{ base: 300 }} height={500} p="xs">
         {
            <Stack sx={(theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], height: 300 })}>
+             <Button variant="light" radius="lg" size="md" compact ><Link href='/imc'>Calcular IMC</Link></Button>
              <Button variant="light" radius="lg" size="md" compact ><Link href='/calcular'>Calcular BMI</Link></Button>
-             <Button variant="light" radius="lg" size="md" compact >Calcular</Button>
              <Button variant="light" radius="lg" size="md" compact >Calcular2</Button>
              <Button variant="light" radius="lg" size="md" compact ><Link href='/buscar'>Buscar Alimento</Link></Button>
              <Button variant="light" radius="lg" size="md" compact  >Cerrar sesión</Button>
