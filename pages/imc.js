@@ -46,7 +46,7 @@ const Imc = () => {
 
         <TextInput
           label="Altura"
-          placeholder="Ingresa tu altura (M)"
+          placeholder="Ingresa tu altura (m)"
           {...form.getInputProps('altura')}
         />
 

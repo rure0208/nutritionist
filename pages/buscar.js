@@ -16,7 +16,6 @@ const Buscar = () => {
 
     setEntradaFilter(entradas.filter(entrada => {
       return entrada.Alimento.toLowerCase().includes(search.toLowerCase());
-
     }));  
 console.log(entradaFilter);
   }
@@ -33,13 +32,8 @@ console.log(entradaFilter);
           onChange={(event) => setSearch(event.currentTarget.value)}
         />
         <Button onClick={busqueda}> Buscador</Button>
-       
-   
-
       </Group>
-      
-       
-        <Table>
+       <Table>
       <thead>
         <tr>
           <th>Alimento</th>
@@ -60,15 +54,10 @@ console.log(entradaFilter);
             )
           })}</td> 
         </tbody>
-       
     </Table>
-      
       </Stack> 
     </Layout>
     </Appsh>
   )
 }
-
-
-
 export default Buscar

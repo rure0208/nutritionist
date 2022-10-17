@@ -5,7 +5,7 @@ import store from '../utils/store'
 import { useRouter } from 'next/router'
 
 
-const Layout = ({children, tituloPestaña, isPrivate = false }) => {
+const Layout = ({children, tituloPestaña, isPrivate = true }) => {
   const router = useRouter();
     const [show, setShow] = useState(false);
 
