@@ -14,7 +14,8 @@ const Layout = ({children,tituloPagina}) => {
              <Button variant="light" radius="lg" size="md" compact ><Link href='/calcular'>Calcular BMI</Link></Button>
              <Button variant="light" radius="lg" size="md" compact >Calcular</Button>
              <Button variant="light" radius="lg" size="md" compact >Calcular2</Button>
-             <Button variant="light" radius="lg" size="md" compact >Calcular3</Button>
+             <Button variant="light" radius="lg" size="md" compact ><Link href='/buscar'>Buscar Alimento</Link></Button>
+             <Button variant="light" radius="lg" size="md" compact >Cerrar Sesión</Button>
 
          </Stack>
       

@@ -1,12 +1,36 @@
 import React from 'react'
 import {Avatar, Button, Input, Text, TextInput, PasswordInput, Container, AppShell, onClick, UnstyledButton, Group } from '@mantine/core'
-import registro from './registro'
-import Link from 'next/link';
 
+import Link from 'next/link';
+import {useState} from 'react'
+import firebaseLogin from '../firebase/firebaseLogin';
+import { useRouter } from 'next/router';
 
 
 const Login = () => {
 
+  const [input, setInput] = useState({
+    email: '',
+    pass: '',
+  });
+  const {push}= useRouter()
+  const onHandleChange= (e)=> {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value,
+    });
+    push('/calcular');
+    
+  }
+
+  async function loginUser() {
+    // validations
+
+    const response = await firebaseLogin.auth.loginUsuario(input.email, input.pass);
+    
+    
+    alert('tooodo bien');
+  }
 
 
   return (
@@ -17,7 +41,8 @@ const Login = () => {
           <h1>Iniciar sesion</h1>
 
          
-          <TextInput label="Ingresa tu E-mail" placeholder="Correo electronico" />
+          <TextInput label="Ingresa tu E-mail" placeholder="Correo electronico" 
+          onChange={ e => onHandleChange(e)}/>
 
 
           
@@ -27,6 +52,7 @@ const Login = () => {
             label="Contraseña"
             description="Password must include at least one letter, number and special character"
             withAsterisk
+            onChange={ e => onHandleChange(e)}
           />
 
           <br></br>
@@ -35,7 +61,7 @@ const Login = () => {
           </Button>
           <p></p>
           <Link href='/registro'>
-            <Button color="violet" variant="outline">
+            <Button color="violet" variant="outline" onClick={loginUser}>
               Registrarse
             </Button>
           </Link>
