@@ -1,10 +1,20 @@
 import React, { Children } from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
 import {AppShell,Button,Stack,Navbar ,Header ,Title} from '@mantine/core';
 
-const Layout = ({children,tituloPagina}) => {
+
+const Layout = ({children,tituloPagina, tituloPestaña}) => {
+
+  
+
   return (
     <div>
+      <Head>
+        <title>
+          BMI-{tituloPestaña}
+        </title>
+      </Head>
     <AppShell
       padding="md"
       navbar={
@@ -15,7 +25,7 @@ const Layout = ({children,tituloPagina}) => {
              <Button variant="light" radius="lg" size="md" compact >Calcular</Button>
              <Button variant="light" radius="lg" size="md" compact >Calcular2</Button>
              <Button variant="light" radius="lg" size="md" compact ><Link href='/buscar'>Buscar Alimento</Link></Button>
-             <Button variant="light" radius="lg" size="md" compact >Cerrar Sesión</Button>
+             <Button variant="light" radius="lg" size="md" compact  >Cerrar sesión</Button>
 
          </Stack>
       

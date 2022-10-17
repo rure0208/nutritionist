@@ -1,5 +1,5 @@
 import React from 'react'
-import {Avatar, Button, Input, Text, TextInput, PasswordInput, Container, AppShell, onClick, UnstyledButton, Group } from '@mantine/core'
+import {Button,TextInput, PasswordInput, Container, AppShell } from '@mantine/core'
 
 import Link from 'next/link';
 import {useState} from 'react'
@@ -19,7 +19,7 @@ const Login = () => {
       ...input,
       [e.target.name]: e.target.value,
     });
-    push('/calcular');
+    push('/inicio');
     
   }
 
@@ -35,8 +35,8 @@ const Login = () => {
 
   return (
 
-    <div >Login
-      <AppShell>
+    <div >
+      
         <Container size={300} px={0}>
           <h1>Iniciar sesion</h1>
 
@@ -69,7 +69,7 @@ const Login = () => {
 
 
         </Container>
-      </AppShell>
+   
 
     </div>
   )

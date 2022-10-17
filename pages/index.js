@@ -1,8 +1,5 @@
 
 import React from 'react'
-
-import { Text,} from '@mantine/core';
-
 import Login from './Login';
 
 const Home = () => {
@@ -11,9 +8,6 @@ const Home = () => {
 
 
         <Login></Login>
-      
-    
-      <Text>Desde Inicio</Text>
       
     </div>
     

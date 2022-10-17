@@ -1,11 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyAttAudwxfOHqii66F7DOTPZM2joBm0s1I",
   authDomain: "alimentos-b401e.firebaseapp.com",
@@ -17,7 +13,7 @@ const firebaseConfig = {
   measurementId: "G-SQGJ3SE7H6"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 
 export default app;
