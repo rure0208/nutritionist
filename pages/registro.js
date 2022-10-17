@@ -3,9 +3,9 @@ import { useState } from 'react'
 import { Button, Input, TextInput, Container, AppShell, PasswordInput } from '@mantine/core'
 import firebase from '../firebase/firebase';
 import Layout from '../components/Layout';
-
+import {useRouter} from 'next/router'
 const Registro = () => {
-
+  const router = useRouter();
   const [input, setInput] = useState({
     nombre: '',
     apellido: '',

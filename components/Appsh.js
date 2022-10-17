@@ -1,7 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
 import {AppShell,Button,Stack,Navbar ,Header ,Title} from '@mantine/core';
+import store from '../utils/store'
+import {useRouter} from 'next/router'
 const Appsh = ({ children, tituloPagina}) => {
+  const router = useRouter();
+
+  function onLogOut() {
+      store.deleteUsuario();
+      router.push('/');
+  }
   return (
     <AppShell
     padding="md"
@@ -13,7 +21,7 @@ const Appsh = ({ children, tituloPagina}) => {
            <Button variant="light" radius="lg" size="md" compact ><Link href='/calcular'>CalculO dietetico</Link></Button>
            <Button variant="light" radius="lg" size="md" compact >Tabla</Button>
            <Button variant="light" radius="lg" size="md" compact ><Link href='/buscar'>Buscar Alimento</Link></Button>
-           <Button variant="light" radius="lg" size="md" compact  >Cerrar sesión</Button>
+           <Button variant="light" radius="lg" size="md" compact  onClick={onLogOut}>Cerrar sesión</Button>
 
        </Stack>
     
