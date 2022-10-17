@@ -5,10 +5,7 @@ import Appsh from './Appsh'
 
 
 
-const Layout = ({children,tituloPaginas, tituloPestaña}) => {
-
- 
-
+const Layout = ({children, tituloPestaña}) => {
   return (
     <div>
       <Head>
@@ -16,7 +13,7 @@ const Layout = ({children,tituloPaginas, tituloPestaña}) => {
           BMI-{tituloPestaña}
         </title>
       </Head>
-   <Appsh tituloPagina={tituloPaginas}/>
+   
    {children}
   
     </div>

@@ -6,6 +6,7 @@ import {useForm} from '@mantine/form'
 import { Box } from '@mantine/core'
 import { Group } from '@mantine/core'
 import Layout from '../components/Layout'
+import Appsh from '../components/Appsh'
 
 
 const Imc = () => {
@@ -34,7 +35,8 @@ const Imc = () => {
   }
 
   return (
-    <Layout tituloPaginas='Índice de masa corporal' tituloPestaña='Imc'>
+    <Appsh tituloPagina='Índice de masa corporal'>
+    <Layout  tituloPestaña='Imc'>
     <Box sx={{ maxWidth: 300 }} mx="auto">
       <form onSubmit={form.onSubmit((values) => Calcular())}>
         <TextInput
@@ -61,6 +63,7 @@ const Imc = () => {
       
     </Box>
     </Layout>
+    </Appsh>
   )
 }
 
