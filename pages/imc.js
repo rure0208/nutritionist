@@ -1,10 +1,6 @@
 import React from 'react'
-import { Center, TextInput } from '@mantine/core'
-import { Title } from '@mantine/core'
-import { Button } from '@mantine/core'
+import { Center, TextInput , Title,Box ,Group } from '@mantine/core'
 import {useForm} from '@mantine/form'
-import { Box } from '@mantine/core'
-import { Group } from '@mantine/core'
 import Layout from '../components/Layout'
 import Appsh from '../components/Appsh'
 

@@ -107,13 +107,7 @@ const CalculosBmi = ({children,formula, setGeb, genero, peso, altura, edad, fa, 
               setget((14.21 * (parseFloat(peso)) + 429));
             }
           }
-          
-    
-          
-         
-          
-         
-    
+
         }
       }
   return (

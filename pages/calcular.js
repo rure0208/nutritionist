@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import Layout from '../components/Layout'
 import CalculosBmi from '../helpers/calculosBmi';
-import { TextInput, NativeSelect, Card, Image, SimpleGrid, Tabs, Text, Box, Table, Space, NumberInput, Input, Button } from '@mantine/core';
+import { TextInput, NativeSelect, Card, Image, SimpleGrid, Text } from '@mantine/core';
 import Appsh from '../components/Appsh';
 
 

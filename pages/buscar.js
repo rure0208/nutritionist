@@ -1,6 +1,7 @@
-import { Group, TextInput, Button, Card } from '@mantine/core'
+import { Group, TextInput, Button, Card, AppShell } from '@mantine/core'
 import React from 'react'
 import { useState } from 'react';
+import Appsh from '../components/Appsh';
 import Layout from '../components/Layout';
 
 
@@ -20,7 +21,8 @@ const Buscar = () => {
 console.log(entradaFilter);
   }
   return (
-    <Layout>
+<Appsh tituloPagina='Buscador'>
+    <Layout tituloPestaña='Buscador'>
       <Group>
         <TextInput
           label="¿Qué deseas buscar?"
@@ -43,7 +45,7 @@ console.log(entradaFilter);
       </Group>
 
     </Layout>
-
+    </Appsh>
   )
 }
 
