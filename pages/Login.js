@@ -19,7 +19,7 @@ const Login = () => {
       ...input,
       [e.target.name]: e.target.value,
     });
-    push('/inicio');
+   
     
   }
 
@@ -28,8 +28,6 @@ const Login = () => {
 
     const response = await firebaseLogin.auth.loginUsuario(input.email, input.pass);
     
-    
-    alert('tooodo bien');
   }
 
 
