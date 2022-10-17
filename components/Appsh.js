@@ -18,7 +18,7 @@ const Appsh = ({ children, tituloPagina}) => {
       {
          <Stack sx={(theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], height: 300 })}>
            <Button variant="light" radius="lg" size="md" compact ><Link href='/imc'>Calcular IMC</Link></Button>
-           <Button variant="light" radius="lg" size="md" compact ><Link href='/calcular'>CalculO dietetico</Link></Button>
+           <Button variant="light" radius="lg" size="md" compact ><Link href='/calcular'>Calculo dietetico</Link></Button>
            <Button variant="light" radius="lg" size="md" compact >Tabla</Button>
            <Button variant="light" radius="lg" size="md" compact ><Link href='/buscar'>Buscar Alimento</Link></Button>
            <Button variant="light" radius="lg" size="md" compact  onClick={onLogOut}>Cerrar sesión</Button>

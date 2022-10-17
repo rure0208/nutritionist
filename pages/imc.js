@@ -20,14 +20,17 @@ const Imc = () => {
     const peso = form.values.peso;
     const altura = form.values.altura;
     const imc = parseFloat(peso)/ (parseFloat(altura)**2)
-
-    let etiqueta = imc < 18.5 ? 'Bajo': imc < 22.9 ? 'Normal': imc < 24.9 ? 'Sobrepeso': 'Obesidad'
-    let color = imc < 18.5 ? 'blue': imc < 22.9 ? 'green' : 'red'
-    form.setValues({
-      imc: imc.toFixed(2).toString(),
-      etiqueta: etiqueta,
-      color: color
-    })
+    if(peso=='' || altura==''){} else{
+      let etiqueta = imc < 18.5 ? 'Bajo': imc < 22.9 ? 'Normal': imc < 24.9 ? 'Sobrepeso': 'Obesidad'
+      let color = imc < 18.5 ? 'blue': imc < 22.9 ? 'green' : 'red'
+      form.setValues({
+        imc: imc.toFixed(2).toString(),
+        etiqueta: etiqueta,
+        color: color
+      })
+    }
+  
+ 
   }
 
   return (
@@ -43,7 +46,7 @@ const Imc = () => {
 
         <TextInput
           label="Altura"
-          placeholder="Ingresa tu altura"
+          placeholder="Ingresa tu altura (M)"
           {...form.getInputProps('altura')}
         />
 
