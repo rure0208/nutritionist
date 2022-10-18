@@ -1,3 +1,4 @@
+/** class to create user and login */
 import app from './config';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 

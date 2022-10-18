@@ -1,3 +1,4 @@
+/** class with the form to register, with the help of the firebase class */
 import React from 'react'
 import { useState } from 'react'
 import { Button, Input, TextInput, Container, AppShell, PasswordInput } from '@mantine/core'
@@ -24,7 +25,7 @@ const Registro = () => {
 
     const response = await firebase.auth.crearUsuario(input.email, input.pass);
     router.push('/inicio');
-    alert('tooodo bien');
+    alert('Te has registrado con éxito, ahora debes iniciar sesión');
   }
 
   return (

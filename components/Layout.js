@@ -1,4 +1,4 @@
-
+/**class that contains page header and condition to show pages, when you have a registered session */
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import store from '../utils/store'
