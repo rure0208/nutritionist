@@ -39,10 +39,26 @@ const Appsh = ({ children, tituloPagina }) => {
          </Stack>
     </Navbar>
     }
-      padding="md"
-    header={
-    <Header height={70} p="md"
-    sx={(theme) => ({ backgroundColor: '#FFFFFF' })}
+    header={<Header height={70} p="md"sx={(theme) => ({ backgroundColor: '#FFFFFF' })} navbar={<Navbar width={{ sm: 300, lg: 250, base: 100, }}>
+        {
+          <Stack sx={(theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], height: 300 })}>
+            <Button variant="light" radius="lg" size="md" compact ><Link href='/imc'>Calcular IMC</Link></Button>
+            <Button variant="light" radius="lg" size="md" compact ><Link href='/calcular'>Calculo dietetico</Link></Button>
+            <Button variant="light" radius="lg" size="md" compact ><Link href='/buscar'>Buscar Alimento</Link></Button>
+            <Button variant="light" radius="lg" size="md" compact onClick={onLogOut}>Cerrar sesión</Button>
+
+          </Stack>
+
+        }
+      </Navbar>
+
+      }
+
+      header={<Header height={60} p="xs">{<Title color="Black" order={1}>{tituloPagina}</Title>}</Header>}
+      styles={(theme) => ({
+        main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
+      })}
+
     >
       <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
         <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
