@@ -22,8 +22,9 @@ const Buscar = () => {
     }
     /**Food Finder View */
     return ( 
-        <Appsh tituloPagina = 'Buscador'>
         <Layout tituloPestaña = 'Buscador' isPrivate = { true }>
+        <Appsh tituloPagina = 'Buscador'>
+       
         <Stack sx = {
             (theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], height: 300 }) } >
         <Group>
@@ -58,8 +59,10 @@ const Buscar = () => {
         </tbody> 
         </Table> 
         </Stack>  
-        </Layout> 
+       
+      
         </Appsh>
+         </Layout>
     )
 }
 export default Buscar
