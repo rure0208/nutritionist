@@ -18,7 +18,7 @@ const Calcular = () => {
   const [genero, setGenero] = useState("");
   const [fa, setFa] = useState("");
   const [formula, setFormula] = useState("");
-  const [geb, setGeb] = useState("");
+  const [geb, setGeb] = useState(0.0);
   const [gett, setget] = useState(0.0);
   return (
     <Layout  tituloPestaña='Calcula' isPrivate={true}>
