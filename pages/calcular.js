@@ -10,12 +10,7 @@ import { IconPhoto, IconMessageCircle } from '@tabler/icons';
 import PorcentajeMacro from '../components/PorcentajeMacro';
 import KilosMacro from '../components/KilosMacro';
 
-
-
-
-const Calcular = () => {
- 
-  
+const Calcular = () => {  
   /**Creation and declaration of variables*/
   const [peso, setPeso] = useState("");
   const [altura, setAltura] = useState("");
@@ -26,12 +21,8 @@ const Calcular = () => {
   const [geb, setGeb] = useState(0.0);
   const [gett, setget] = useState(0.0);
   return (
-
-   
-
     <Layout  tituloPestaña='Calcula' isPrivate={true}>
     <Appsh tituloPagina="calcular">
-    
       <Card shadow="sm" p="lg" radius="md" withBorder>
         <Card.Section>
           <Image
@@ -104,7 +95,6 @@ const Calcular = () => {
       <Text> G.E.B: {gett.toFixed(2)} {formula}</Text>
       <Text> G.E.T/F.A: {geb.toFixed(2)} {formula}</Text>
 
-
       <Stack>
     <Text size="md" color="purple" align="center">Macronutrientes</Text>
          <Space h="xs" />
@@ -125,7 +115,6 @@ const Calcular = () => {
     </Stack>
     </Appsh>
     </Layout>
- 
      )
 }
 

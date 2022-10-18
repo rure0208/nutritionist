@@ -27,12 +27,8 @@ const Imc = () => {
         imc: imc.toFixed(2).toString(),
         etiqueta: etiqueta,
         color: color
-      })
-    }
-  
- 
+      })}
   }
-
   return (
     <Appsh tituloPagina='Calcular Indice de Masa Corporal'>
     <Layout  tituloPestaña='Imc' isPrivate={true}>
@@ -45,23 +41,19 @@ const Imc = () => {
           placeholder="Ingresa tu peso"
           {...form.getInputProps('peso')}
         />
-
         <TextInput
           label="Altura"
           placeholder="Ingresa tu altura (m)"
           {...form.getInputProps('altura')}
         />
-
         <Group position="center" mt="md">
         <Button sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })} compact type="submit">
            Calcular
         </Button>
         </Group>
-
         <Center><Title color={form.values.color}>{form.values.etiqueta.toUpperCase()}</Title></Center>
         <Center><Title>{form.values.imc}</Title></Center>
       </form>
-      
     </Box>
     </Card>
     </Layout>

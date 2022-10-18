@@ -24,11 +24,8 @@ const firebase = {
     loginUsuario: async (email, password) => {
       return await signInWithEmailAndPassword(auth, email, password);
     }
-
   }
-
 }
-
 export default firebase;
 
 

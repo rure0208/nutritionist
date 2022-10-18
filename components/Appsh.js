@@ -1,8 +1,7 @@
 /** class that contains the menu with the options to choose */
-
 import React from 'react'
 import Link from 'next/link'
-import {AppShell,Button,Stack,Navbar ,Header ,Title, MediaQuery, Burger,opened,theme,Text,useMantineTheme} from '@mantine/core';
+import {AppShell,Button,Stack,Navbar ,Header ,Title, MediaQuery, Burger,Text,useMantineTheme} from '@mantine/core';
 import store from '../utils/store'
 import {useRouter} from 'next/router'
 import { useState } from 'react';

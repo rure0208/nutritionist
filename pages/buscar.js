@@ -1,4 +1,4 @@
-import { Group, TextInput, Button, Card, AppShell, Stack, Table } from '@mantine/core'
+import { Group, TextInput, Button, Stack, Table } from '@mantine/core'
 import React from 'react'
 import { useState } from 'react';
 import Appsh from '../components/Appsh';
@@ -22,12 +22,8 @@ const Buscar = () => {
     }
     /**Food Finder View */
     return ( 
-
-     
-
         <Layout tituloPestaña = 'Buscador' isPrivate = { true }>
         <Appsh tituloPagina = 'Buscador'>
-       
         <Stack sx = {
             (theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], height: 300 }) } >
         <Group>
@@ -35,12 +31,11 @@ const Buscar = () => {
                         placeholder = ""
                         id = "busca"
                         value = { search }
-                        onChange = {(event) => setSearch(event.currentTarget.value) }
-            /> 
-            
+                        onChange = {(event) => setSearch(event.currentTarget.value) }/>             
         </Group> 
-        <Group><Button onClick = { busqueda } sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })} > Buscador </Button> </Group>
-        
+        <Group>
+            <Button onClick = { busqueda } sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })} > Buscador </Button> 
+        </Group>
         <Table>
         <thead>
         <tr>
@@ -48,29 +43,21 @@ const Buscar = () => {
         <th > Carbohidratos </th>
         </tr> </thead> 
         <tbody>
-        
         <td> {
             entradaFilter.map((entrada, index) => {
                 return ( <p key = { index } > { entrada.Alimento } </p>
-                )
-            })}
+                )})}
         </td> 
         <td> {
             entradaFilter.map((entrada, index) => {
                 return ( <p key = { index } > { entrada.Carbohidratos } </p>
-                )
-            })
-        } 
+                )})} 
         </td>  
         </tbody> 
         </Table> 
         </Stack>  
-       
-      
         </Appsh>
          </Layout>
-
-   
-    )
+         )
 }
 export default Buscar
