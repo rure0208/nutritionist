@@ -4,12 +4,17 @@ import {useForm} from '@mantine/form'
 import { useState } from 'react';
 import Layout from '../components/Layout'
 import CalculosBmi from '../helpers/calculosBmi';
-import {Stack,Space,Tabs, TextInput, NativeSelect, Card, Image, SimpleGrid, Text } from '@mantine/core';
+import { TextInput, NativeSelect, Card, Image, SimpleGrid, Text, Tabs ,Modal,Box,Space,Stack} from '@mantine/core';
 import Appsh from '../components/Appsh';
+import { IconPhoto, IconMessageCircle } from '@tabler/icons';
+import PorcentajeMacro from '../components/PorcentajeMacro';
+import KilosMacro from '../components/KilosMacro';
+
 
 
 
 const Calcular = () => {
+ 
   
   /**Creation and declaration of variables*/
   const [peso, setPeso] = useState("");
@@ -18,7 +23,7 @@ const Calcular = () => {
   const [genero, setGenero] = useState("");
   const [fa, setFa] = useState("");
   const [formula, setFormula] = useState("");
-  const [geb, setGeb] = useState("");
+  const [geb, setGeb] = useState(0.0);
   const [gett, setget] = useState(0.0);
   return (
     <Layout  tituloPestaña='Calcula' isPrivate={true}>
@@ -96,6 +101,25 @@ const Calcular = () => {
       <Text> G.E.B: {gett.toFixed(2)} {formula}</Text>
       <Text> G.E.T/F.A: {geb.toFixed(2)} {formula}</Text>
 
+
+      <Stack>
+    <Text size="md" color="purple" align="center">Macronutrientes</Text>
+         <Space h="xs" />
+        <Tabs defaultValue="porcentaje">
+            <Tabs.List>
+                <Tabs.Tab value="porcentaje"  >Porcentaje</Tabs.Tab>
+                <Tabs.Tab value="kilos"  >G/Kg</Tabs.Tab>
+            </Tabs.List>
+
+            <Tabs.Panel value="porcentaje" pt="xs">
+                <PorcentajeMacro kcal={geb} pesoMacro={peso}/>
+            </Tabs.Panel>
+
+            <Tabs.Panel value="kilos" pt="xs">
+                <KilosMacro kcal={geb} pesoMacro={peso} />
+            </Tabs.Panel>
+        </Tabs>
+    </Stack>
     </Appsh>
     </Layout>
   )
