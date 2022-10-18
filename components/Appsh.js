@@ -20,7 +20,6 @@ const Appsh = ({ children, tituloPagina }) => {
 
   return (
     <AppShell
-
     styles={{
       main: {
         background: '#FFFFFF',
