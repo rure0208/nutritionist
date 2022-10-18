@@ -26,6 +26,9 @@ const Calcular = () => {
   const [geb, setGeb] = useState(0.0);
   const [gett, setget] = useState(0.0);
   return (
+
+   
+
     <Layout  tituloPestaña='Calcula' isPrivate={true}>
     <Appsh tituloPagina="calcular">
     
@@ -122,7 +125,8 @@ const Calcular = () => {
     </Stack>
     </Appsh>
     </Layout>
-  )
+ 
+     )
 }
 
 export default Calcular

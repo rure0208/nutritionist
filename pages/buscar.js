@@ -22,19 +22,25 @@ const Buscar = () => {
     }
     /**Food Finder View */
     return ( 
+
+     
+
         <Layout tituloPestaña = 'Buscador' isPrivate = { true }>
         <Appsh tituloPagina = 'Buscador'>
        
         <Stack sx = {
             (theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], height: 300 }) } >
         <Group>
-        <TextInput label = "¿Qué deseas buscar?"
-        placeholder = ""
-        id = "busca"
-        value = { search }
-        onChange = {(event) => setSearch(event.currentTarget.value) }/> 
-        <Button onClick = { busqueda } > Buscador </Button> 
+            <TextInput label = "¿Qué deseas buscar?"
+                        placeholder = ""
+                        id = "busca"
+                        value = { search }
+                        onChange = {(event) => setSearch(event.currentTarget.value) }
+            /> 
+            
         </Group> 
+        <Group><Button onClick = { busqueda } sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })} > Buscador </Button> </Group>
+        
         <Table>
         <thead>
         <tr>
@@ -63,6 +69,8 @@ const Buscar = () => {
       
         </Appsh>
          </Layout>
+
+   
     )
 }
 export default Buscar

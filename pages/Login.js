@@ -40,7 +40,7 @@ const Login = () => {
             value={pass} onChange={(e) => setPass(e.target.value)}
             withAsterisk
           />
- <Group position="center" mt="md" mb="xs">
+          <Group position="center" mt="md" mb="xs">
           <br></br>
           <Button color="violet" variant="outline" onClick={onLogin} >
             Iniciar sesion

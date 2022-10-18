@@ -1,5 +1,5 @@
 import React from 'react'
-import { Center, TextInput , Title,Box ,Group,Button } from '@mantine/core'
+import { Center, TextInput , Title,Box ,Group,Button,Text,Card} from '@mantine/core'
 import {useForm} from '@mantine/form'
 import Layout from '../components/Layout'
 import Appsh from '../components/Appsh'
@@ -34,9 +34,11 @@ const Imc = () => {
   }
 
   return (
-    <Appsh tituloPagina='Índice de masa corporal'>
+    <Appsh tituloPagina='Calcular Indice de Masa Corporal'>
     <Layout  tituloPestaña='Imc' isPrivate={true}>
+    <Card shadow="sm" p="lg" radius="md" withBorder height={160}>
     <Box sx={{ maxWidth: 300 }} mx="auto">
+      <Center><Text color='#A1C298'>Indice de Masa Corporal</Text></Center>
       <form onSubmit={form.onSubmit((values) => Calcular())}>
         <TextInput
           label="Peso"
@@ -51,7 +53,7 @@ const Imc = () => {
         />
 
         <Group position="center" mt="md">
-        <Button variant="light" color="grape" compact type="submit">
+        <Button sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })} compact type="submit">
            Calcular
         </Button>
         </Group>
@@ -61,6 +63,7 @@ const Imc = () => {
       </form>
       
     </Box>
+    </Card>
     </Layout>
     </Appsh>
   )
