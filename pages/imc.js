@@ -34,7 +34,7 @@ const Imc = () => {
   }
 
   return (
-    <Appsh tituloPagina='Índice de masa corporal'>
+    <Appsh tituloPagina='Calcular Indice de Masa Corporal'>
     <Layout  tituloPestaña='Imc' isPrivate={true}>
     <Box sx={{ maxWidth: 300 }} mx="auto">
       <form onSubmit={form.onSubmit((values) => Calcular())}>

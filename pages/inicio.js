@@ -6,7 +6,7 @@ const Inicio = () => {
   return (
 
     <Layout tituloPestaña='Inicio' isPrivate={true}>
-<Appsh tituloPagina="Bienvenido" ></Appsh>
+    <Appsh tituloPagina="Bienvenido" ></Appsh>
 
     </Layout>
   )

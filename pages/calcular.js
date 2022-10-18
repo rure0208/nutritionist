@@ -18,7 +18,7 @@ const Calcular = () => {
   const [geb, setGeb] = useState("");
   const [gett, setget] = useState(0.0);
   return (
-    <Appsh tituloPagina="calcular">
+    <Appsh tituloPagina="Calculo Dietetico">
     <Layout  tituloPestaña='Calcula' isPrivate={true}>
       <Card shadow="sm" p="lg" radius="md" withBorder>
         <Card.Section>

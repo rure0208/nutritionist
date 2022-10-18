@@ -22,7 +22,7 @@ const Buscar = () => {
     }
     /**Food Finder View */
     return ( 
-        <Appsh tituloPagina = 'Buscador'>
+        <Appsh tituloPagina = 'Buscador de Alimentos'>
         <Layout tituloPestaña = 'Buscador' isPrivate = { true }>
         <Stack sx = {
             (theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], height: 300 }) } >
