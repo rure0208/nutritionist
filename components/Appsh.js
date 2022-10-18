@@ -32,7 +32,6 @@ const Appsh = ({ children, tituloPagina }) => {
          <Stack sx={(theme) => ({ backgroundColor: '#FFFFFF' })}>
            <Button sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })} radius="lg" size="md" compact ><Link href='/imc'>Calcular IMC</Link></Button>
            <Button sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })} radius="lg" size="md" compact ><Link href='/calcular'>Calculo dietetico</Link></Button>
-           <Button sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })} radius="lg" size="md" compact >Tabla</Button>
            <Button sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })} radius="lg" size="md" compact ><Link href='/buscar'>Buscar Alimento</Link></Button>
            <Button sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),},})} radius="lg" size="md" compact  onClick={onLogOut}>Cerrar sesión</Button>
          </Stack>
@@ -45,7 +44,6 @@ const Appsh = ({ children, tituloPagina }) => {
             <Button variant="light" radius="lg" size="md" compact ><Link href='/calcular'>Calculo dietetico</Link></Button>
             <Button variant="light" radius="lg" size="md" compact ><Link href='/buscar'>Buscar Alimento</Link></Button>
             <Button variant="light" radius="lg" size="md" compact onClick={onLogOut}>Cerrar sesión</Button>
-
           </Stack>
 
         }
