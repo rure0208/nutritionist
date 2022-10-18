@@ -8,6 +8,7 @@ import Appsh from '../components/Appsh';
 
 
 const Calcular = () => {
+      /**Creation and declaration of variables*/
   const [peso, setPeso] = useState("");
   const [altura, setAltura] = useState("");
   const [edad, setEdad] = useState(0);
@@ -30,6 +31,7 @@ const Calcular = () => {
           <TextInput
             placeholder="Ingrese su peso"
             label="Peso (kg)"
+            /** Assignment of value to the variable*/
             onChange={(event) => setPeso(event.currentTarget.value)}
             id='w'
             withAsterisk
@@ -38,6 +40,7 @@ const Calcular = () => {
             placeholder="Ingrese su altura"
             label="Altura (cm)"
             id='h'
+            /** Assignment of value to the variable*/
             onChange={(event) => setAltura(event.currentTarget.value)}
             withAsterisk
           />
@@ -45,6 +48,7 @@ const Calcular = () => {
             placeholder="Edad"
             label="Edad"
             id='e'
+            /** Assignment of value to the variable*/
             onChange={(event) => setEdad(parseFloat(event.currentTarget.value))}
             withAsterisk
 
@@ -57,6 +61,7 @@ const Calcular = () => {
             nothingFound="No options"
             data={['Masculino', 'Femenino']}
             value={genero}
+                /** Assignment of value to the variable*/
             onChange={(event) => setGenero(event.currentTarget.value)}
           />
           <NativeSelect
@@ -66,6 +71,7 @@ const Calcular = () => {
             nothingFound="No options"
             data={['Sedentario', 'Ligero', 'Moderado', 'Activo', 'Vigoroso']}
             value={fa}
+            /** Assignment of value to the variable*/
             onChange={(event) => setFa(event.currentTarget.value)}
           />
           <NativeSelect
@@ -75,11 +81,14 @@ const Calcular = () => {
             nothingFound="No options"
             data={['Harries', 'OMS', 'OWEN', 'Valencia', 'Mifflin']}
             value={formula}
+            /** Assignment of value to the variable*/
             onChange={(event) => setFormula(event.currentTarget.value)}
           />
         </SimpleGrid>
       </Card>
+      {/** Button where you access the operations*/}
       <CalculosBmi formula={formula} setGeb={setGeb} genero={genero} peso={peso} altura={altura} edad={edad} fa={fa} setget={setget} />
+           {/** Printing gett and geb variables*/}
       <Text> G.E.B: {gett} {formula}</Text>
       <Text> G.E.T/F.A: {geb} {formula}</Text>
     </Layout>

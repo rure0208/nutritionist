@@ -5,6 +5,7 @@ const CalculosBmi = ({children,formula, setGeb, genero, peso, altura, edad, fa, 
     
       
       const factor =()=>{
+        /**value assignment depending on the selected */
         switch (fa) {
           case 'Sedentario':
             return(1.2)
@@ -27,24 +28,28 @@ const CalculosBmi = ({children,formula, setGeb, genero, peso, altura, edad, fa, 
       
       }
     
-    
+      /**Operations depending on the selected formula */
       const calculo = () => {
-    
+    /**Condition if you are a woman  */ 
         if (genero == 'Femenino') {
+          /**Formula OMS */
           if(formula=='OMS'){
             setGeb(((parseFloat(peso) * 8.7) - (parseFloat(altura) * 25 / 100) + 865)* factor());
             setget((parseFloat(peso) * 8.7) - (parseFloat(altura) * 25 / 100) + 865);
           }
+          /**Formula OWEN */
           else if (formula=='OWEN')
           {
             setGeb((795 + (7.18 * (parseFloat(peso))))*factor());
             setget(795 + (7.18 * (parseFloat(peso))));
           }
+          /**Formula MIFFLIN*/
           else if(formula=='Mifflin')
           {
             setGeb(((parseFloat(peso) * 10) + (parseFloat(altura) * 6.25) - (5 * parseFloat(edad)) - 161)*factor())
             setget((parseFloat(peso) * 10) + (parseFloat(altura) * 6.25) - (5 * parseFloat(edad)) - 161);
           }
+          /**Formula HARRIS */
           else if(formula =='Harries'){
             const geb= (655.1 + (9.56 * parseFloat(peso)) + (1.85 * parseFloat(altura)) - (4.68 * parseFloat(edad)));
             const fac= geb * factor();
