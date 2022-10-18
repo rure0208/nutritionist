@@ -70,6 +70,10 @@ const CalculosBmi = ({children,formula, setGeb, genero, peso, altura, edad, fa, 
               setGeb((10.98 * (parseFloat(peso)) + 520)*factor());
               setget((10.98 * (parseFloat(peso)) + 520));
             }
+            else if(edad<18)
+            {
+              alert('Debes de tener más de 18 años');
+            }
           }
           
     
@@ -110,6 +114,10 @@ const CalculosBmi = ({children,formula, setGeb, genero, peso, altura, edad, fa, 
             else if (edad >= 60) {
               setGeb((14.21 * (parseFloat(peso)) + 429)* factor());
               setget((14.21 * (parseFloat(peso)) + 429));
+            }
+            else if(edad<18)
+            {
+              alert('Debes de tener más de 18 años');
             }
           }
 
