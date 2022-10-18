@@ -18,8 +18,12 @@ const Calcular = () => {
   const [geb, setGeb] = useState("");
   const [gett, setget] = useState(0.0);
   return (
-    <Appsh tituloPagina="Calculo Dietetico">
+
+   
+
     <Layout  tituloPestaña='Calcula' isPrivate={true}>
+    <Appsh tituloPagina="calcular">
+    
       <Card shadow="sm" p="lg" radius="md" withBorder>
         <Card.Section>
           <Image
@@ -91,9 +95,11 @@ const Calcular = () => {
            {/** Printing gett and geb variables*/}
       <Text> G.E.B: {gett} {formula}</Text>
       <Text> G.E.T/F.A: {geb} {formula}</Text>
-    </Layout>
+    
     </Appsh>
-  )
+    </Layout>
+ 
+     )
 }
 
 export default Calcular
