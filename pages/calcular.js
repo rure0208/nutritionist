@@ -1,14 +1,17 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
+import {useForm} from '@mantine/form'
 import { useState } from 'react';
 import Layout from '../components/Layout'
 import CalculosBmi from '../helpers/calculosBmi';
-import { TextInput, NativeSelect, Card, Image, SimpleGrid, Text } from '@mantine/core';
+import {Stack,Space,Tabs, TextInput, NativeSelect, Card, Image, SimpleGrid, Text } from '@mantine/core';
 import Appsh from '../components/Appsh';
 
 
+
 const Calcular = () => {
-      /**Creation and declaration of variables*/
+  
+  /**Creation and declaration of variables*/
   const [peso, setPeso] = useState("");
   const [altura, setAltura] = useState("");
   const [edad, setEdad] = useState(0);
@@ -90,9 +93,9 @@ const Calcular = () => {
       {/** Button where you access the operations*/}
       <CalculosBmi formula={formula} setGeb={setGeb} genero={genero} peso={peso} altura={altura} edad={edad} fa={fa} setget={setget} />
            {/** Printing gett and geb variables*/}
-      <Text> G.E.B: {gett} {formula}</Text>
-      <Text> G.E.T/F.A: {geb} {formula}</Text>
-    
+      <Text> G.E.B: {gett.toFixed(2)} {formula}</Text>
+      <Text> G.E.T/F.A: {geb.toFixed(2)} {formula}</Text>
+
     </Appsh>
     </Layout>
   )

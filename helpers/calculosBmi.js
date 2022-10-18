@@ -79,7 +79,7 @@ const CalculosBmi = ({children,formula, setGeb, genero, peso, altura, edad, fa, 
 
           if(formula=='OMS'){
             setGeb(((parseFloat(peso) * 11.3) + (parseFloat(altura) * 16) / 100 + 901)* factor());
-            setGeb(((parseFloat(peso) * 11.3) + (parseFloat(altura) * 16) / 100 + 901));
+            setget(((parseFloat(peso) * 11.3) + (parseFloat(altura) * 16) / 100 + 901));
           }
           else if (formula=='OWEN')
           {
