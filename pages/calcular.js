@@ -1,12 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
-import {useForm} from '@mantine/form'
 import { useState } from 'react';
 import Layout from '../components/Layout'
 import CalculosBmi from '../helpers/calculosBmi';
 import { TextInput, NativeSelect, Card, Image, SimpleGrid, Text, Tabs ,Modal,Box,Space,Stack, Center, Group} from '@mantine/core';
 import Appsh from '../components/Appsh';
-import { IconPhoto, IconMessageCircle } from '@tabler/icons';
 import PorcentajeMacro from '../components/PorcentajeMacro';
 import KilosMacro from '../components/KilosMacro';
 
