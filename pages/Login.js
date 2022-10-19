@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, TextInput, PasswordInput, Container, AppShell ,Card,Group} from '@mantine/core'
+import { Button, TextInput, PasswordInput, Container, AppShell ,Card,Group,Text,Image,Center} from '@mantine/core'
 import Registro from './registro'
 import Link from 'next/link';
 import Layout from '../components/Layout';
@@ -24,39 +24,54 @@ const Login = () => {
   }
 
   return (
-    <Layout>
-      <AppShell>
-        <Container size={300} px={0}>
-        <Card shadow="sm" p="lg" radius="md" withBorder>
-       
-          <h1>Iniciar sesion</h1>
-
-          <TextInput label="Ingresa tu E-mail" placeholder="Correo electronico" value={email} onChange={(e) => setEmail(e.target.value)} />
-
+  <Layout>
+    <AppShell 
+    sx={(theme) => ({ backgroundColor: '#C6EBC5' })}>
+      <Container size={400} px={0} >
+        <Card shadow="sm" p="lg" radius="md" withBorder
+        style={{ 
+          width: 400, 
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          height: 300,
+          position: 'absolute',
+          transform: 'translate(-50%, -50%)',
+         top: '40%',
+         left: '50%',
+        }}>
+        <Card.Section>
+          <Center>
+          <Image
+            src="https://www.logogenio.es/download/preview/medium/10962077"
+            height={60}
+            width={60}
+            
+          />
+          </Center>
+        </Card.Section>
+        <Text weight={700} align="center" style={{ fontFamily: 'Greycliff CF, sans-serif' }} >Iniciar Sesion</Text>
+        <TextInput label="Ingresa tu E-mail" placeholder="Correo electronico" value={email} onChange={(e) => setEmail(e.target.value)} />
           <PasswordInput
             placeholder="Ingresa tu contraseña"
             label="Contraseña"
-            description="Password must include at least one letter, number and special character"
             value={pass} onChange={(e) => setPass(e.target.value)}
-            withAsterisk
-          />
-          <Group position="center" mt="md" mb="xs">
-          <br></br>
-          <Button color="violet" variant="outline" onClick={onLogin} >
-            Iniciar sesion
-          </Button>
-          <p></p>
-          <Link href='/registro'>
-            <Button color="violet" variant="outline">
+        />
+        <Group position="center" mt="md" mb="xs">
+        <br></br>
+        <Button sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })} onClick={onLogin} >
+          Iniciar sesion
+        </Button>
+        <p></p>
+        <Link href='/registro'>
+          <Button sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })}>
               Registrarse
-            </Button>
-          </Link>
-          </Group>
-          </Card>
-        </Container>
-      </AppShell>
-
-    </Layout>
+          </Button>
+        </Link>
+        </Group>
+        </Card>
+      </Container>
+    </AppShell>
+  </Layout>
   )
 }
 

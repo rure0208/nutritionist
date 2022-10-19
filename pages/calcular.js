@@ -4,11 +4,14 @@ import {useForm} from '@mantine/form'
 import { useState } from 'react';
 import Layout from '../components/Layout'
 import CalculosBmi from '../helpers/calculosBmi';
-import { TextInput, NativeSelect, Card, Image, SimpleGrid, Text, Tabs ,Modal,Box,Space,Stack} from '@mantine/core';
+import { TextInput, NativeSelect, Card, Image, SimpleGrid, Text, Tabs ,Modal,Box,Space,Stack, Center, Group} from '@mantine/core';
 import Appsh from '../components/Appsh';
 import { IconPhoto, IconMessageCircle } from '@tabler/icons';
 import PorcentajeMacro from '../components/PorcentajeMacro';
 import KilosMacro from '../components/KilosMacro';
+
+
+
 
 const Calcular = () => {  
   /**Creation and declaration of variables*/
@@ -21,15 +24,22 @@ const Calcular = () => {
   const [geb, setGeb] = useState(0.0);
   const [gett, setget] = useState(0.0);
   return (
-    <Layout  tituloPestaña='Calcula' isPrivate={true}>
-    <Appsh tituloPagina="calcular">
+  <Layout  tituloPestaña='Calcula' isPrivate={true}>
+    <Appsh tituloPagina="calculo dietetico">  
+    <div style={{ width: 750, marginLeft: 'auto', marginRight: 'auto' }}>
       <Card shadow="sm" p="lg" radius="md" withBorder>
         <Card.Section>
           <Image
-            src="https://img.freepik.com/vector-premium/control-indice-masa-corporal-bastante-joven-dieta-tratando-controlar-peso-corporal-imc-chica-escala-metodo-medicion-grasas-saludables-escalas-graficas-obesidad-peso-obesidad-extrema_458444-1022.jpg?w=2000"
-            height={400}
+            src="https://micarrerauniversitaria.com/wp-content/uploads/2018/03/nutricion-y-dietetica-3.jpg"
+            height={200}
           />
         </Card.Section>
+        <Group position="center" mt="md" mb="xs">
+                    <Text color='#A1C298'  weight={700}>Calculo Dietetico</Text>
+                    <Text color='#A1C298'>En este apartado puedes obtener valores sobre las necesidades energéticas del paciente por medio del calculo dietetico. 
+                    Solamente necesitamos llenas algunos datos importantes sobre la persona, como lo son el sexo, edad, peso, estatura
+                     y actividad física.</Text>
+                  </Group>
         <SimpleGrid cols={3}>
           <TextInput
             placeholder="Ingrese su peso"
@@ -37,7 +47,6 @@ const Calcular = () => {
             /** Assignment of value to the variable*/
             onChange={(event) => setPeso(event.currentTarget.value)}
             id='w'
-            withAsterisk
           />
           <TextInput
             placeholder="Ingrese su altura"
@@ -45,7 +54,6 @@ const Calcular = () => {
             id='h'
             /** Assignment of value to the variable*/
             onChange={(event) => setAltura(event.currentTarget.value)}
-            withAsterisk
           />
           <TextInput
             placeholder="Edad"
@@ -53,8 +61,6 @@ const Calcular = () => {
             id='e'
             /** Assignment of value to the variable*/
             onChange={(event) => setEdad(parseFloat(event.currentTarget.value))}
-            withAsterisk
-
           />
 
           <NativeSelect
@@ -78,7 +84,7 @@ const Calcular = () => {
             onChange={(event) => setFa(event.currentTarget.value)}
           />
           <NativeSelect
-            label="Seleccione el factor de actividad"
+            label="Seleccione la formula"
             placeholder="Seleccione"
             searchable
             nothingFound="No options"
@@ -88,33 +94,41 @@ const Calcular = () => {
             onChange={(event) => setFormula(event.currentTarget.value)}
           />
         </SimpleGrid>
+        <Space h="xs" />
+        <Group position='center'>
+        {/** Button where you access the operations*/}
+        <CalculosBmi formula={formula} setGeb={setGeb} genero={genero} peso={peso} altura={altura} edad={edad} fa={fa} setget={setget} />
+        </Group>
+        <Space h="xs" />
+          {/** Printing gett and geb variables*/}
+          
+          <Center><Text color='#FF884B'>G.E.B: {gett.toFixed(2)} {formula}</Text></Center>
+          <Center><Text color='#FF884B'> G.E.T/F.A: {geb.toFixed(2)} {formula}</Text></Center>
+
+          <Stack>
+
+        <Space h="xs" />
+            <Tabs defaultValue="porcentaje">
+                <Tabs.List>
+                    <Tabs.Tab value="porcentaje"  >Porcentaje</Tabs.Tab>
+                    <Tabs.Tab value="kilos"  >G/Kg</Tabs.Tab>
+                </Tabs.List>
+
+                <Tabs.Panel value="porcentaje" pt="xs">
+                    <PorcentajeMacro kcal={geb} pesoMacro={peso}/>
+                </Tabs.Panel>
+
+                <Tabs.Panel value="kilos" pt="xs">
+                    <KilosMacro kcal={geb} pesoMacro={peso} />
+                </Tabs.Panel>
+            </Tabs>
+        </Stack>
       </Card>
-      {/** Button where you access the operations*/}
-      <CalculosBmi formula={formula} setGeb={setGeb} genero={genero} peso={peso} altura={altura} edad={edad} fa={fa} setget={setget} />
-           {/** Printing gett and geb variables*/}
-      <Text> G.E.B: {gett.toFixed(2)} {formula}</Text>
-      <Text> G.E.T/F.A: {geb.toFixed(2)} {formula}</Text>
-
-      <Stack>
-    <Text size="md" color="purple" align="center">Macronutrientes</Text>
-         <Space h="xs" />
-        <Tabs defaultValue="porcentaje">
-            <Tabs.List>
-                <Tabs.Tab value="porcentaje"  >Porcentaje</Tabs.Tab>
-                <Tabs.Tab value="kilos"  >G/Kg</Tabs.Tab>
-            </Tabs.List>
-
-            <Tabs.Panel value="porcentaje" pt="xs">
-                <PorcentajeMacro kcal={geb} pesoMacro={peso}/>
-            </Tabs.Panel>
-
-            <Tabs.Panel value="kilos" pt="xs">
-                <KilosMacro kcal={geb} pesoMacro={peso} />
-            </Tabs.Panel>
-        </Tabs>
-    </Stack>
-    </Appsh>
+      </div>
+     
+      </Appsh>
     </Layout>
+ 
      )
 }
 

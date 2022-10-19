@@ -125,7 +125,7 @@ const CalculosBmi = ({children,formula, setGeb, genero, peso, altura, edad, fa, 
       }
   return (
     <div>
-         <Button onClick={calculo}>Calcular</Button>
+         <Button sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })} onClick={calculo}>Calcular</Button>
 
         
 {children}

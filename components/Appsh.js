@@ -1,7 +1,8 @@
 /** class that contains the menu with the options to choose */
+
 import React from 'react'
 import Link from 'next/link'
-import {AppShell,Button,Stack,Navbar ,Header ,Title, MediaQuery, Burger,Text,useMantineTheme} from '@mantine/core';
+import {AppShell,Button,Stack,Navbar ,Header ,Title, MediaQuery, Burger,opened,theme,Text,useMantineTheme,Center,Image} from '@mantine/core';
 import store from '../utils/store'
 import {useRouter} from 'next/router'
 import { useState } from 'react';
@@ -37,13 +38,18 @@ const Appsh = ({ children, tituloPagina }) => {
          </Stack>
     </Navbar>
     }
-    header={<Header height={70} p="md"sx={(theme) => ({ backgroundColor: '#FFFFFF' })} navbar={<Navbar width={{ sm: 300, lg: 250, base: 100, }}>
+    header={<Header 
+            height={70} 
+            p="md"
+            sx={(theme) => ({ backgroundColor: '#FFFFFF'})} 
+            navbar={<Navbar width={{ sm: 300, lg: 250, base: 100, }}>
         {
           <Stack sx={(theme) => ({ backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0], height: 300 })}>
             <Button variant="light" radius="lg" size="md" compact ><Link href='/imc'>Calcular IMC</Link></Button>
             <Button variant="light" radius="lg" size="md" compact ><Link href='/calcular'>Calculo dietetico</Link></Button>
             <Button variant="light" radius="lg" size="md" compact ><Link href='/buscar'>Buscar Alimento</Link></Button>
             <Button variant="light" radius="lg" size="md" compact onClick={onLogOut}>Cerrar sesión</Button>
+
           </Stack>
 
         }
@@ -51,7 +57,7 @@ const Appsh = ({ children, tituloPagina }) => {
 
       }
 
-      header={<Header height={60} p="xs">{<Title color="Black" order={1}>{tituloPagina}</Title>}</Header>}
+      header={<Header height={60} p="xs">{<Title aling="center" color="Black" order={1}>{tituloPagina}</Title>}</Header>}
       styles={(theme) => ({
         main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
       })}
@@ -67,7 +73,14 @@ const Appsh = ({ children, tituloPagina }) => {
             mr="xl"
           />
         </MediaQuery>
-        <Text color='#A1C298'  size="xl" transform="uppercase">{tituloPagina}</Text>
+        <div style={{ width: 50, marginLeft: '0', marginRight: '0' }}>
+      <Image
+        radius="md"
+        src="https://www.logogenio.es/download/preview/medium/10962077"
+        alt="Random unsplash image"
+      />
+    </div>
+        <Text aling="center" color='#A1C298'  size="xl" transform="uppercase">{tituloPagina}</Text>
       </div>
     </Header>}
     
