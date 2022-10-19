@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from 'react';
 import Appsh from '../components/Appsh';
 import Layout from '../components/Layout';
-
+//karen Meza
 
 const Buscar = () => {
     /**Creation and declaration of variables*/
