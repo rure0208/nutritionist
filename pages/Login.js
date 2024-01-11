@@ -12,15 +12,16 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
 
-  async function onLogin() {
-    await firebase.auth.loginUsuario(email, pass)
-      .then(response => {
-        store.setUsuario(response.user.accessToken);
+   function onLogin() {
+     //async
+    //await firebase.auth.loginUsuario(email, pass)
+      //.then(response => {
+        //store.setUsuario(response.user.accessToken);
         router.push('/inicio');
-      })
-      .catch(e => {
-        alert(`Credenciales no validas`);
-      })
+      //})
+      //.catch(e => {
+       // alert(`Credenciales no validas`);
+      //})
   }
 
   return (
