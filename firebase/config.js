@@ -7,12 +7,12 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyDBfkQ0Cbk2LUERMbEZ3sMORTE3VKm3g30",
-  authDomain: "nutricionista-8f435.firebaseapp.com",
-  projectId: "nutricionista-8f435",
-  storageBucket: "nutricionista-8f435.appspot.com",
-  messagingSenderId: "437848396367",
-  appId: "1:437848396367:web:a2b9923d93c22fecc5903a"
+   // apiKey: "AIzaSyDBfkQ0Cbk2LUERMbEZ3sMORTE3VKm3g30",
+  //authDomain: "nutricionista-8f435.firebaseapp.com",
+  //projectId: "nutricionista-8f435",
+  //storageBucket: "nutricionista-8f435.appspot.com",
+  //messagingSenderId: "437848396367",
+  //appId: "1:437848396367:web:a2b9923d93c22fecc5903a"
 };
 
 // Initialize Firebase
