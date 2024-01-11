@@ -59,7 +59,7 @@ const Login = () => {
         />
         <Group position="center" mt="md" mb="xs">
         <br></br>
-        <Button sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })} onClick={onLogin} >
+        <Button sx={(theme) => ({ backgroundColor: '#A1C298', '&:hover': {backgroundColor: theme.fn.darken('#A1C298', 0.05),}, })} onClick={ router.push('/inicio')} >
           Iniciar sesion
         </Button>
         <p></p>
